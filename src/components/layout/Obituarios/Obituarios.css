@@ -13,6 +13,7 @@
   .izquierdaObi {
     width: 25%;
     height: 100%;
+    margin-left: 10%;
   }
   
   .derechaObi {
@@ -90,6 +91,11 @@
   color: #085423;
 }
 
+.FechaHoy{
+  padding-bottom: 5%;
+  color: #54595F;
+}
+
 @media screen and (max-width: 768px) {
   /* ... Tus otros estilos para el media query ... */
 
@@ -99,6 +105,7 @@
 
   .izquierdaObi{
     width: 100%;
+    margin: auto;
   }
 
   .container-hijo{

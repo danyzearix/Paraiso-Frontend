@@ -16,15 +16,16 @@ import LoginForm from './components/LoginForm/LoginForm';
 import RegisterForm from './components/RegisterForm/RegisterForm';
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import SalasVelacion from './components/SalasVelacion/SalasVelacion';
+import EditarObituarios from './components/EditarObituarios/EditarObituarios';
 
 
 const slides = [
   {
-    image: 'https://paraisocementerio.a2hosted.com/wp-content/uploads/2024/04/Dia-de-la-madre-banner-web-compress-v2.jpg',
-    title: '',
-    subtitle: '',
-    button: 'Más información',
-    url: 'https://wa.link/3fp8pr'
+    image: 'https://paraisocementerio.a2hosted.com/wp-content/uploads/2024/05/Facebook-banner.png',
+    title: 'Renovamos nuestras redes sociales',
+    subtitle: 'Encuéntralas dando clic en el botón',
+    button: 'Ver Links',
+    url: 'https://www.atom.bio/paraiso_parque_cementerio/'
   },
   {
     image: 'https://paraisocementerio.a2hosted.com/wp-content/uploads/2024/01/pagos-slider-paraiso.jpg',
@@ -78,6 +79,7 @@ function App() {
     <Route path="/register" element={<Auth><RegisterForm /></Auth>} />
     <Route path="/adminpanel" element={<Auth><AdminPanel /></Auth>} />
     <Route path="/FormularioObituarios" element={<Auth><FormularioObituarios /></Auth>} />
+    <Route path="/EditarObituarios" element={<Auth><EditarObituarios /></Auth>} />
     <Route path="/" element={<Navigate replace to="/login" />} />
     <Route path="/ObituariosGenerales" element={<ObituariosGenerales/>} />
     <Route path="/salasdevelacion" element={<SalasVelacion/>} />

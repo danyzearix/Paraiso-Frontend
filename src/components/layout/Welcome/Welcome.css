@@ -240,6 +240,34 @@ hr.gradient {
   transform: scale(1.1);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
+.genericTtitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900; /* Extrabold */
+  font-size: 2.2em; /* Ajusta el tamaño según tus necesidades */
+  color: #0D6820; /* Asegúrate de que el color sea el adecuado para tu diseño */
+  text-align: center; /* Centro el título */
+}
+
+.genericSubtitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 1.2em; /* Ajusta el tamaño según tus necesidades */
+  color: #0D6820; /* Asegúrate de que el color sea el adecuado para tu diseño */
+  text-align: center; /* Centro el subtítulo */
+}
+
+.gradient {
+  display: block;
+  margin: 20px auto; /* Centra el hr */
+  width: 50%; /* Ajusta el ancho según tus necesidades */
+  height: 2px; /* Ajusta la altura según tus necesidades */
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Ejemplo de degradado */
+  border: none; /* Elimina cualquier borde */
+}
+
+
 @media screen and (max-width: 768px) {
   /* ... Tus otros estilos para el media query ... */
   

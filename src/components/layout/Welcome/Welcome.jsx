@@ -103,9 +103,7 @@ const Welcome = () => {
     </div>
     <div className='midMargin'>
       <h1 className='genericTtitle'>PRODUCTOS</h1>
-      <p className='genericSubtitle'>Productos creados pensando en tus seres queridos
-
-</p>
+      <p className='genericSubtitle'>Productos creados pensando en tus seres queridos</p>
       <hr class="gradient"/>
     </div>
     <div className='productsContainer'>

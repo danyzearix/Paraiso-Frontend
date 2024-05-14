@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 const Countdown = () => {
   // Define la fecha de inicio en formato de objeto de fecha de JavaScript
-  const fechaInicio = new Date(2024, 4, 12, 8
+  const fechaInicio = new Date(2024, 5, 16, 8
     , 0, 0); // Año, mes (0-indexado), día, hora, minuto, segundo
 
   // Inicializa los estados de cuenta atrás y la fecha actual
@@ -40,7 +40,7 @@ const Countdown = () => {
     <div className="padre">
       <div className="hijo">
         <h2>Próximo evento:</h2>
-        <p>Día de las madres</p>
+        <p>Día del padre 🧔‍♂️</p>
       </div>
       <div className="hijo">
         <h1>{dias < 10 ? `0${dias}` : dias}</h1>

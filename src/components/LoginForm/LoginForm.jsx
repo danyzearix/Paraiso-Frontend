@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate en lugar de useHistory
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'; // Importa SweetAlert
 import "./LoginForm.css";
 import { Fragment } from 'react';
 
@@ -8,13 +9,14 @@ const LoginForm = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  // Obtén la función de navegación
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
+    setLoading(true);
 
     try {
       const response = await axios.post('https://paraiso-node-api-0c5186e80e32.herokuapp.com/api/usuarios/login', {
@@ -28,14 +30,31 @@ const LoginForm = ({ onLoginSuccess }) => {
         onLoginSuccess();
       }
 
-      // Utiliza navigate para redirigir al usuario a la ruta protegida después del inicio de sesión exitoso
-      navigate('/adminpanel');
+      // Muestra la alerta de éxito
+      Swal.fire({
+        title: 'Inicio de sesión exitoso',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      }).then(() => {
+        navigate('/adminpanel');
+      });
+
     } catch (err) {
       if (err.response && err.response.status === 400) {
         setError('Credenciales no válidas');
       } else {
         setError('Error en el servidor');
       }
+
+      // Muestra la alerta de error
+      Swal.fire({
+        title: 'Inicio de sesión fallido',
+        text: 'Verificar credenciales',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -66,7 +85,9 @@ const LoginForm = ({ onLoginSuccess }) => {
           />
         </div>
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Cargando...' : 'Iniciar Sesión'}
+        </button>
       </form>
     </Fragment>
   );
