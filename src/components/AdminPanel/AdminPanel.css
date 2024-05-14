@@ -1,0 +1,20 @@
+/* AdminPanel.css */
+
+.admin-panel {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    /* Estilos del sidebar */
+    background-color: #333;
+    width: 250px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 0px;
+  }
+  

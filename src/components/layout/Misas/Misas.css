@@ -1,0 +1,73 @@
+/* Misas.css */
+.misasTitle1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+
+}
+.misas-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  margin: 1% 0% 15% 0% ;
+  gap: 5%;
+}
+
+.container-misas{
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+
+}
+
+.misas-heading {
+  color: #085423;
+}
+
+.misas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.misas-table th,
+.misas-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.misas-table th {
+  background-color: #085423;
+  color: white;
+  text-align: center;
+}
+
+.misas-table td {
+  color: #085423;
+  text-align: center;
+}
+
+.misas-table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.image-container-misas {
+  display: flex;
+  width: 20%; /* Puedes ajustar este tamaño según tus necesidades */
+  height: 100%; /* Asegúrate de mantener la misma proporción de ancho y alto para un círculo perfecto */
+  border-radius: 50%; /* Hace que el div sea un círculo */
+   /* Esconde cualquier parte de la imagen que exceda los límites del div */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Añade la sombra al div */
+  overflow: hidden;
+}
+
+.image-container-misas img {
+  width: 300px;
+  height: 200px;
+}
+

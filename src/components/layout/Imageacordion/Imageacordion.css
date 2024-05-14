@@ -1,0 +1,78 @@
+.acordionContainer{
+    margin-top: 3%;
+}
+.imageAccordion {
+    position: relative;
+    flex: 0.2;
+    min-width: 20%;
+    transition: flex 0.5s;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    
+  }
+  
+  .imageAccordion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+  }
+  
+  .imageAccordion:hover {
+    flex: 1;
+  }
+  
+  .imageAccordion .contenido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 1; /* Esto coloca el contenido por encima de la imagen */
+  }
+  
+  .imageAccordion:hover .contenido {
+    opacity: 1;
+  }
+  
+  .imageAccordion .contenido h1 {
+    margin-bottom: 20px;
+  }
+  
+  .imageAccordion .contenido button {
+    padding: 10px 20px;
+    background: #0D6820;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+  }
+  
+  .imageAccordion .contenido button:hover {
+    background: #4CAF50;
+    color: white;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    /* ... Tus otros estilos para el media query ... */
+  
+    .acordionContainer{
+      flex-direction: column;
+    }
+  
+  
+  }

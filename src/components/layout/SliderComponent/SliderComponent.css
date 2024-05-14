@@ -1,0 +1,137 @@
+.slide {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+
+ /* Estilo básico para las diapositivas */
+ .slide img {
+  animation: zoomEffect 3.5s infinite alternate;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05); /* Ajusta el nivel de zoom si es necesario para evitar el desbordamiento */
+  }
+}
+
+  
+  .slide img {
+    width: 100%;
+    height: 820px;
+    filter: saturate(1) brightness(0.4) blur(1px);
+  }
+  
+  .slide h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .slide p {
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    bottom: 1rem;
+    top:55%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  
+  .slide button {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #0D6820;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0rem;
+    position: absolute;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+   
+  }  
+  
+  .slick-prev{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 998;
+  }
+
+  .slick-next {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .slick-prev:before, .slick-next:before{
+    font-size: 25px;
+    z-index: 998;
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .slick-dots li button:before{
+    font-size: 0.7rem;
+    color: #BED748;
+  }
+
+  .slick-dots li.slick-active button:before{
+    color: #BED748;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* ... Tus otros estilos para el media query ... */
+    .slide h1{
+      font-size: 1.1rem;
+    }
+
+    .slide p{
+      font-size: 1rem;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 500px;
+      filter: saturate(1) brightness(0.4) blur(1px);
+    }
+
+    .slide button {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: white;
+      background-color: #0D6820;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0rem;
+      position: absolute;
+      bottom: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }  
+  
+  
+  }

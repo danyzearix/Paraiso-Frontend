@@ -1,0 +1,52 @@
+.header-container{
+    background-color: grey;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0 8px 0;
+}
+
+.icon-nav{
+    width: 6%;
+    text-align: center;
+    height: 100%
+    
+}
+
+.info-container{
+    width: 85%;
+    color: white;
+    font-size: 12px;
+    
+}
+
+.pay-button{
+    padding: 0.6em 1.1em 0.6em 1.1em;
+    border-radius: 2px;
+    border: none;
+    background-color: #6EC1E4;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+}
+
+ .bi-telephone-inbound-fill{
+    color: #6EC1E4;
+    font-size: 1.5rem;
+}
+
+.bi-coin{
+    color: white;
+}
+
+@media (max-width: 769px) {
+    /* Estos estilos se aplicarán en pantallas de 769px de ancho o más */
+    .header-container{
+        display: none;
+    }
+}

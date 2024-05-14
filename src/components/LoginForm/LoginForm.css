@@ -1,0 +1,80 @@
+.formLogin-header {
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/11/manos-doctora-irreconocible-rellenando-formulario-portapapeles.jpg') no-repeat center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    filter: contrast(120%);
+  }
+  
+  .formLogin-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+  }
+  
+  .formLogin-title {
+    color: white;
+    z-index: 1;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+
+
+
+
+
+.formLogin {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .formLogin label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px 0;
+  }
+  
+  .formLogin input[type="email"],
+  .formLogin input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Added for consistent sizing */
+  }
+  
+  .formLogin button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #086B2C;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .formLogin button:hover {
+    background-color: #0056b3;
+  }
+  
+  .formLogin p {
+    color: red;
+  }
+  
+  /* Puedes añadir más estilos para elementos como 'Remember me' y 'Forgot Password?' */
+  

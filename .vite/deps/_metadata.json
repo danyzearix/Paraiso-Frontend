@@ -1,0 +1,113 @@
+{
+  "hash": "ac0ec95e",
+  "browserHash": "ed349acf",
+  "optimized": {
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "73de2179",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "dbd03f55",
+      "needsInterop": false
+    },
+    "luxon": {
+      "src": "../../node_modules/luxon/src/luxon.js",
+      "file": "luxon.js",
+      "fileHash": "33858027",
+      "needsInterop": false
+    },
+    "moment": {
+      "src": "../../node_modules/moment/dist/moment.js",
+      "file": "moment.js",
+      "fileHash": "636db64c",
+      "needsInterop": false
+    },
+    "moment/locale/es": {
+      "src": "../../node_modules/moment/locale/es.js",
+      "file": "moment_locale_es.js",
+      "fileHash": "04e16f27",
+      "needsInterop": true
+    },
+    "prop-types": {
+      "src": "../../node_modules/prop-types/index.js",
+      "file": "prop-types.js",
+      "fileHash": "33ab3506",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "9f7301d0",
+      "needsInterop": true
+    },
+    "react-calendar": {
+      "src": "../../node_modules/react-calendar/dist/esm/index.js",
+      "file": "react-calendar.js",
+      "fileHash": "e8fc8ce4",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "4f69f0ec",
+      "needsInterop": true
+    },
+    "react-icons/ai": {
+      "src": "../../node_modules/react-icons/ai/index.esm.js",
+      "file": "react-icons_ai.js",
+      "fileHash": "1fbfcaff",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.esm.js",
+      "file": "react-icons_fa.js",
+      "fileHash": "825797d5",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "29ac5067",
+      "needsInterop": false
+    },
+    "react-slick": {
+      "src": "../../node_modules/react-slick/lib/index.js",
+      "file": "react-slick.js",
+      "fileHash": "6290382a",
+      "needsInterop": true
+    },
+    "sweetalert2": {
+      "src": "../../node_modules/sweetalert2/dist/sweetalert2.all.js",
+      "file": "sweetalert2.js",
+      "fileHash": "263d2858",
+      "needsInterop": true
+    },
+    "sweetalert2-react-content": {
+      "src": "../../node_modules/sweetalert2-react-content/dist/sweetalert2-react-content.es.js",
+      "file": "sweetalert2-react-content.js",
+      "fileHash": "04edaa69",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-KYZD2TUE": {
+      "file": "chunk-KYZD2TUE.js"
+    },
+    "chunk-UO46RFO3": {
+      "file": "chunk-UO46RFO3.js"
+    },
+    "chunk-RQJLLGVQ": {
+      "file": "chunk-RQJLLGVQ.js"
+    },
+    "chunk-UOIPVTYB": {
+      "file": "chunk-UOIPVTYB.js"
+    },
+    "chunk-AUZ3RYOM": {
+      "file": "chunk-AUZ3RYOM.js"
+    }
+  }
+}

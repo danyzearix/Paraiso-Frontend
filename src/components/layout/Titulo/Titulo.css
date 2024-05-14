@@ -1,0 +1,22 @@
+/* Titulo.css */
+
+.titulo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .titulo-texto {
+    font-size: 36px;
+    text-align: center;
+    color: #54595F;
+  }
+  
+  .separador {
+    width: 30px;
+    height: 3px;
+    background-color: green;
+    margin-top: 10px;
+  }
+  

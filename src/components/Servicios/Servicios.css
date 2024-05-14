@@ -1,0 +1,228 @@
+/*
+.servicios {
+    
+    text-align: center;
+  }
+  
+  .servicios-header {
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/vista-lateral-mano-pulsera-1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    filter: contrast(120%);
+  }
+  
+  .servicios-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+  }
+  
+  .servicios-title {
+    color: white;
+    z-index: 1;
+  }
+
+  .servicios-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 90%;
+    width: 100%;
+    gap: 50px; 
+    margin: 15% 0
+  }
+  
+  .text-section {
+    flex: 1; 
+    text-align: start;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+  
+  .image-section {
+  border-radius: 50%; 
+  overflow: hidden;  
+  height: 320px;
+  }
+  
+  .product-image {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .paragraph {
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    width: 64px;
+    margin-right: 10px;
+  }
+
+.paragraphIdent{
+    margin-left: 8%;
+    margin-top: 5%;
+}
+
+.asesoriaContainer{
+  display: flex;
+  align-items: center;
+}
+
+.servicesList{
+  margin: 5% 10%;
+}
+
+*/
+
+/* src/components/CommunityMission.css */
+
+/* src/components/CommunityMission.css */
+
+/* Porción del CSS */
+.servicios {
+    
+  text-align: center;
+}
+
+.servicios-header {
+  background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/vista-lateral-mano-pulsera-1.jpg') no-repeat center center;
+  background-size: cover;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  filter: contrast(120%);
+}
+
+.servicios-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
+
+.servicios-title {
+  color: white;
+  z-index: 1;
+}
+
+.communityMission{
+  display: flex;
+}
+
+.mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 6%;
+  margin-right: 1rem;
+}
+
+.mission img {
+  width: 400px;          /* Define un tamaño fijo para la imagen. Puedes ajustar este valor según lo que necesites. */
+  height: 400px;         /* Haz que el height sea igual al width para mantener la forma circular. */
+  object-fit: cover;     /* Esto asegura que la imagen se recorte y no se estire o encoja. */
+  border-radius: 50%;    /* Esto hace que la imagen sea redonda. */
+}
+
+
+.missionContent {
+  padding: 1rem;
+  margin-right: 10%;
+}
+
+.missionContent-r{
+  margin-left: 10%;
+}
+
+.mission h2 {
+  font-size: 1.5rem;
+  color: #FFA500; /* Orange */
+  margin-bottom: 1rem;
+}
+
+.mission h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.mission p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #085423; /* Orange */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #FF8C00; /* Darker orange */
+}
+
+.imageAccordion{
+  border: none;
+}
+
+.lista-cenizarios{
+  margin-bottom: 5%;
+}
+
+.final-margin{
+  margin-bottom: 10%;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .communityMission{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .mission{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+}

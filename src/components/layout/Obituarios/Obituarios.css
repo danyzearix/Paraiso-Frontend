@@ -1,0 +1,117 @@
+.containerMainObi{
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+  
+  .container-hijo {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .izquierdaObi {
+    width: 25%;
+    height: 100%;
+  }
+  
+  .derechaObi {
+    width: 70%;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .grid-item {
+    padding: 10px;
+  }
+
+  .ObiturariosTitle{
+    text-align: center;
+    margin-bottom: 2%;
+  }
+ 
+.ObituariosSubcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #F3F3F3;
+    padding: 6% 0
+}
+  
+.ObiImage{
+    border-radius: 50%;
+    margin: 5% 0;
+}
+
+.parrafoVerde{
+    color: #085423;
+    margin-bottom: 30%;
+}
+
+.parrafoGris{
+    color:#54595F
+}
+
+.nombrePersona{
+    color: #085423;
+}
+
+.hora{
+    color: black;
+    font-size: medium;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    
+}
+
+.bi-watch{
+    color: #085423;
+}
+
+.bi-geo-alt-fill{
+    color: #085423;
+}
+
+.SelectorFecha{
+  display: flex;
+  width: 40%;
+  margin: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.labelFecha{
+  color: #085423;
+}
+
+@media screen and (max-width: 768px) {
+  /* ... Tus otros estilos para el media query ... */
+
+  .ObituariosSubcontainer{
+    flex-direction: column;
+  }
+
+  .izquierdaObi{
+    width: 100%;
+  }
+
+  .container-hijo{
+    text-align: center;
+  }
+
+  .grid{
+    grid-template-columns: none;
+  }
+
+  .obituario-grilla{
+    margin: 3%
+  }
+
+}
+

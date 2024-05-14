@@ -1,0 +1,96 @@
+/* Testimonios.css */
+
+.testimonios-container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+ /* Testimonios.css */
+
+.columna-izquierda {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+    background-color: #f1f1f1;
+    background-image: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2024/01/dos-adultos-mayores-junto-al-mar-1.jpg'); /* Cambia la ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  .columna-derecha {
+    flex: 1.2;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .titulo {
+    font-size: 32px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #0D6820;
+    font-weight: 400;
+  }
+  
+  .separador {
+    width: 30px;
+    height: 3px;
+    background-color: green;
+    margin-bottom: 15px;
+  }
+  
+  .texto {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: grey;
+    margin: 30px 0;
+    font-style: italic;
+  }
+  
+  .imagen {
+    width: 70px;
+    height: 62px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .nombre-container {
+    display: flex;
+    align-items: center;
+    padding-top: 5%;
+  }
+  
+  .nombre-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+  }
+  
+.testimonios-titulo{
+    font-style: italic;
+}
+
+.cliente{
+    color: #6FC1E4;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  /* ... Tus otros estilos para el media query ... */
+
+.testimonios-container{
+  flex-direction: column;
+}
+
+.columna-izquierda{
+  padding: 50%;
+}
+
+}

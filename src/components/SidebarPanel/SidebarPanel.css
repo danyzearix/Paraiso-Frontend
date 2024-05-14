@@ -1,0 +1,32 @@
+/* SidebarPanel.css */
+
+.sidebar {
+    background-color: #131A1F;
+    color: white;
+    padding: 20px 0 0 10px;
+    width: 15%; /* O el ancho que prefieras */
+  }
+  
+  .search-container input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .menu-section h3 {
+    margin-bottom: 15px;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-list li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 0;
+  }
+  

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
+
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+    position: absolute;
+    top: 6.5%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 999;
+    
+}
+
+.nav-logo{
+    width: 25%;
+    margin: 0 0 0 2rem;
+}
+
+.nav-menu{
+    width: 80%;
+    margin: 0 2rem 0 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.lista-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.lista-menu {
+    display: flex;
+    flex-direction: row;  /* Esta dirección será cambiada en el media query */
+    justify-content: space-evenly;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+a:hover{
+    
+    color: #BED748;
+}
+
+li{
+    transition: transform 0.3s ease;
+}
+
+li:hover{
+    transform: scale(1.1);
+}
+
+.hamburger-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .hamburger-icon.active {
+    color: #BED748;
+  }
+  
+  .nav-menu.open {
+    display: flex;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: relative;  /* Cambio de absolute a relative */
+      top: 0;
+      left: 0;
+      transform: none;
+      z-index: 1; /* Asegurándonos que el menú está sobre otros elementos */
+    }
+  
+    .nav-menu.open {
+        display: block;  /* Cambiado de flex a block para que ocupe todo el ancho */
+    }
+
+    .lista-menu {
+        flex-direction: column;  /* Cambio a dirección vertical */
+        align-items: center;  /* Alineación central para que los enlaces se muestren al centro */
+        gap: 1rem;  /* Espaciado entre los enlaces */
+        background-color: grey;
+        list-style: none;
+        padding: 3%;
+    }
+  
+    .hamburger-icon {
+      display: block;
+      position: relative; /* Cambio de absolute a relative */
+      margin-top: 1rem;   /* Espacio arriba del icono */
+      z-index: 2; /* Asegurándonos que el icono está sobre el menú y otros elementos */
+    }
+  
+    .nav-logo {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      position: relative;
+      z-index: 3; /* Asegurándonos que el logo está sobre el menú y el icono */
+    }
+  
+    .navbar-container {
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      background-color: rgb(83, 83, 83);
+      z-index: 0;
+    }
+  }

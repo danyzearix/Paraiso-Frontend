@@ -1,0 +1,151 @@
+.productos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .productos-header {
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/10/AdobeStock_259369090.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .productos-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+  }
+  
+  .productos-title {
+    color: white;
+    z-index: 1;
+  }
+
+  .productos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    width: 100%;
+    gap: 50px; /* Espacio entre los elementos */
+    margin: 5% 0
+  }
+  
+  .text-section {
+    flex: 1; /* Ocupa todo el espacio restante */
+    text-align: start;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+  
+  .image-section {
+  border-radius: 50%; /* Borded redondeado */
+  overflow: hidden;  /* Fija el tamaño a 400px */
+  height: 320px;
+  }
+  
+  .product-image {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+  }
+  
+  .title_Productos {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color:#085423
+  }
+  
+  .subtitle {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .paragraph {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .icon {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+.paragraphIdent{
+    margin-left: 8%;
+    margin-top: 5%;
+}
+
+/* styles.css */
+
+.cotizar-button {
+  text-align: center;
+  background-color: #085423;
+  border: none;
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5%;
+  margin-left: 8%;
+}
+
+.cotizar-button:hover {
+  background-color: #616161;
+  
+}
+
+.cotizar-button svg {
+  margin-right: 8px;
+}
+
+.productosButton{
+  padding: 20px 30px;
+  background-color: #085423;
+  border: none ;
+  border-radius: 15px;
+  color: white;
+  margin-left: 42%;
+  margin-top: 5%;
+
+
+}
+ .productosButton:hover{
+  background-color: #085423;
+  scale: 1.05;
+ }
+  
+
+ @media screen and (max-width: 768px) {
+
+  .productos-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    gap: 10px; /* Espacio entre los elementos */
+    margin: 10% 0
+  }
+
+  .productosButton{
+    margin: 8% 0;
+  }
+ 
+  .title_Productos{
+    text-align: center;
+  }
+
+ }

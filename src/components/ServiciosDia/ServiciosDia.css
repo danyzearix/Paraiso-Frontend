@@ -1,0 +1,28 @@
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto; 
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #085423;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

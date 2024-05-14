@@ -1,0 +1,50 @@
+.formObituarios-header {
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/11/manos-doctora-irreconocible-rellenando-formulario-portapapeles.jpg') no-repeat center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    filter: contrast(120%);
+  }
+  
+  .formObituarios-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+  }
+  
+  .formObituarios-title {
+    color: white;
+    z-index: 1;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+.formContainer{
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+}
+
+.form-button{
+    margin-top: 5%;
+}
+
+.upload-box{
+    margin-top: 10%;
+}
+
+.margin-low{
+    margin-bottom: 5%;
+}
+
+.margin-up{
+    margin-top: 5%;
+}

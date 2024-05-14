@@ -1,0 +1,22 @@
+.SalasHeader{
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/hermoso-arbol-verde-hoja-bosque-sol-1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    filter: contrast(120%);
+}
+
+.VentajasSalasContainer{
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}

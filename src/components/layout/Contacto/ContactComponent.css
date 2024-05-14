@@ -1,0 +1,40 @@
+.contact-container {
+    font-family: 'Arial', sans-serif;
+    /* Otros estilos generales */
+}
+
+.logo {
+    width: 150px;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    /* Añade estilos según diseño */
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.phone-section, .email-section, .location-section {
+    padding: 10px;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+/* Media queries para diseño móvil */
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+    }
+
+    .phone-section, .email-section, .location-section {
+        margin-bottom: 10px;
+    }
+}
+

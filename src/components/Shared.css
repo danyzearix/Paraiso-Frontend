@@ -1,0 +1,14 @@
+.greenButton{
+    font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      background-color: #0D6820;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0rem;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 3%;
+      
+  }
+  
