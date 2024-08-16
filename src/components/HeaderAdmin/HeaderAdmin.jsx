@@ -6,7 +6,7 @@ import './HeaderAdmin.css'; // Importa los estilos del header
 // Simula la obtención del nombre de usuario logueado, reemplázalo con tu lógica de autenticación
 const getUsername = () => {
   // Esta función debería obtener el nombre de usuario del contexto de autenticación
-  return 'NombreUsuario'; // Reemplazar con la lógica adecuada
+  return 'Pilar'; // Reemplazar con la lógica adecuada
 };
 
 const HeaderAdmin = () => {

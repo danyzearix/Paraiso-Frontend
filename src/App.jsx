@@ -63,18 +63,9 @@ function App() {
 
   return (
     <Router>
-  {/* Renderiza Header y NavBar solo si la ruta no es /adminpanel, /login ni /register */}
-  {location.pathname !== '/adminpanel' && location.pathname !== '/login' && location.pathname !== '/register' && (
-    <>
-      <Header />
-      <NavBar />
-    </>
-  )}
 
   <Routes>
-    <Route path="/" element={<Home slides={slides}/>} />
-    <Route path="/productos" element={<Productos/>} />
-    <Route path="/servicios" element={<Servicios/>} />
+    <Route path="/" element={<Auth><AdminPanel /></Auth>} />
     <Route path="/login" element={<LoginForm/>} />
     <Route path="/register" element={<Auth><RegisterForm /></Auth>} />
     <Route path="/adminpanel" element={<Auth><AdminPanel /></Auth>} />
@@ -82,14 +73,11 @@ function App() {
     <Route path="/EditarObituarios" element={<Auth><EditarObituarios /></Auth>} />
     <Route path="/" element={<Navigate replace to="/login" />} />
     <Route path="/ObituariosGenerales" element={<ObituariosGenerales/>} />
-    <Route path="/salasdevelacion" element={<SalasVelacion/>} />
+
 
     
 
   </Routes>
-
-  {/* Renderiza el Footer solo si la ruta no es /adminpanel, /FormularioObituarios, /login ni /register */}
-  {location.pathname !== '/adminpanel' && location.pathname !== '/FormularioObituarios' && location.pathname !== '/login' && location.pathname !== '/register' && <Footer />}
 </Router>
   )
 }

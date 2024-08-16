@@ -19,11 +19,8 @@ function NavBar() {
 
         <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
             <ul className='lista-menu'>
-            <li><Link to="/" onClick={() => setIsOpen(false)}>Inicio</Link></li>
-            <li><Link to="/productos" onClick={() => setIsOpen(false)}>Productos</Link></li>
-            <li><Link to="/servicios" onClick={() => setIsOpen(false)}>Servicios</Link></li>
-            <li><Link to="/ObituariosGenerales" onClick={() => setIsOpen(false)}>Obituarios</Link></li>
-            <li><Link to="https://paraisocementerio.a2hosted.com/misas-y-eventos" onClick={() => setIsOpen(false)}>Misas y Reservas</Link></li>
+            <li><Link to="/adminpanel" onClick={() => setIsOpen(false)}>Inicio</Link></li>
+            
             </ul>
         </div>
     </div>
