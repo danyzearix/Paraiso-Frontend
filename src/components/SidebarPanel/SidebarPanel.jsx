@@ -17,6 +17,8 @@ const SidebarPanel = () => {
   <li><a href="/FormularioObituarios" target="_blank" rel="noopener noreferrer">Subir Obituarios ✝️</a></li>
   <li><a href="/EditarObituarios" target="_blank" rel="noopener noreferrer">Editar Obituarios ✝️</a></li>
   <li><a href="/register" target="_blank" rel="noopener noreferrer">Crear usuario 🧑</a></li>
+  <li><a href="/FormularioMisa" target="_blank" rel="noopener noreferrer">Formulario misas 🧑</a></li>
+  <li><a href="/MisasAdmin" target="_blank" rel="noopener noreferrer">Administración misas 🧑</a></li>
   
   {/* Otro enlace externo que se abre en una nueva pestaña */}
   <li><a href="https://paraisocementerio.a2hosted.com/wp-admin/edit.php?post_type=product" target="_blank" rel="noopener noreferrer">Administrar tienda 🏪</a></li>

@@ -17,6 +17,8 @@ import RegisterForm from './components/RegisterForm/RegisterForm';
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import SalasVelacion from './components/SalasVelacion/SalasVelacion';
 import EditarObituarios from './components/EditarObituarios/EditarObituarios';
+import FormularioReservaMisa from './components/FormularioReservaMisa/FormularioReservaMisa';
+import MisasAdmin from './components/MisasAdmin/MisasAdmin';
 
 
 const slides = [
@@ -73,6 +75,8 @@ function App() {
     <Route path="/EditarObituarios" element={<Auth><EditarObituarios /></Auth>} />
     <Route path="/" element={<Navigate replace to="/login" />} />
     <Route path="/ObituariosGenerales" element={<ObituariosGenerales/>} />
+    <Route path="/FormularioMisa" element={<Auth><FormularioReservaMisa /></Auth>} />
+    <Route path="/MisasAdmin" element={<Auth><MisasAdmin /></Auth>} />
 
 
     
