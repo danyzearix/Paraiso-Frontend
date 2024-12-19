@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es'; // Importar el locale español
 import Swal from 'sweetalert2'; // Importar SweetAlert2
-import './FormularioReservaMisa.css'
+import './FormularioReservaMisa.css';
 
 // Registrar el locale español
 registerLocale('es', es);
@@ -16,111 +16,92 @@ const FormularioReservaMisa = () => {
   const [celular, setCelular] = useState('');
   const [tipoIdentificacion, setTipoIdentificacion] = useState('');
   const [numerodocumento, setNumerodocumento] = useState('');
-  const [destinatarios, setDestinatarios] = useState(['', '', '', '', '']);
   const [mensaje, setMensaje] = useState('');
+  const [horarios, setHorarios] = useState([]);
+  const [metodoPago, setMetodoPago] = useState('');
 
-  // Función para verificar si la fecha es válida según el servicio seleccionado
-  const esFechaDisponible = (date) => {
-    const dia = date.getDay(); // Domingo = 0, Lunes = 1, ..., Sábado = 6
-
-    if (servicio !== "Misa rezada") {
-      return false;
+  const obtenerHorariosDisponibles = async (misaId) => {
+    try {
+      const respuesta = await fetch(`http://localhost:3000/api/horarios/${misaId}`);
+      const data = await respuesta.json();
+      setHorarios(data);
+    } catch (error) {
+      console.error("Error al obtener los horarios disponibles:", error);
     }
-
-    // Para "Misa rezada", los días permitidos son de lunes a viernes
-    if (dia === 0 || dia === 6) {
-      return false;
-    }
-
-    return true;
   };
 
-  // Función para filtrar las horas disponibles según el día
-  const filtrarHora = (time) => {
-    if (!fecha) {
-      return false;
-    }
-
-    const fechaSeleccionada = fecha;
-    const dia = fechaSeleccionada.getDay();
-
-    const hora = time.getHours();
-    const minutos = time.getMinutes();
-
-    const horaFecha = new Date(fechaSeleccionada);
-    horaFecha.setHours(hora);
-    horaFecha.setMinutes(minutos);
-
-    let rangosPermitidos = [];
-
-    if (dia === 1 || dia === 2 || dia === 4) {
-      rangosPermitidos.push({ inicio: 9, fin: 16 });
-    } else if (dia === 3) {
-      rangosPermitidos.push({ inicio: 9, fin: 10 });
-      rangosPermitidos.push({ inicio: 11, fin: 16 });
-    } else if (dia === 5) {
-      rangosPermitidos.push({ inicio: 9, fin: 15 });
+  const manejarCambioServicio = (e) => {
+    const nuevoServicio = e.target.value;
+    setServicio(nuevoServicio);
+    if (nuevoServicio === "Misa rezada") {
+      obtenerHorariosDisponibles("67621402fda71854295879e4"); // ID de la misa rezada
     } else {
-      return false;
-    }
-
-    for (let rango of rangosPermitidos) {
-      const horaInicio = new Date(fechaSeleccionada);
-      horaInicio.setHours(rango.inicio, 0, 0);
-      const horaFin = new Date(fechaSeleccionada);
-      horaFin.setHours(rango.fin, 0, 0);
-
-      if (horaFecha >= horaInicio && horaFecha < horaFin) {
-        return true;
-      }
-    }
-
-    return false;
-  };
-
-  const agregarDestinatario = () => {
-    if (destinatarios.length < 10) {
-      setDestinatarios([...destinatarios, '']);
+      setHorarios([]);
     }
   };
 
-  const manejarCambioDestinatario = (index, valor) => {
-    const nuevosDestinatarios = [...destinatarios];
-    nuevosDestinatarios[index] = valor;
-    setDestinatarios(nuevosDestinatarios);
+  const esFechaDisponible = (date) => {
+    if (!horarios.length) return false;
+    const fechaSeleccionada = date.toISOString().split('T')[0];
+    return horarios.some((horario) => horario.fecha.startsWith(fechaSeleccionada));
   };
 
-  const manejarEnvio = (e) => {
+  const filtrarHora = (time) => {
+    if (!fecha || horarios.length === 0) return false;
+    const horaSeleccionada = time.getHours();
+    const minutosSeleccionados = time.getMinutes();
+    const fechaCompleta = new Date(fecha);
+    fechaCompleta.setHours(horaSeleccionada, minutosSeleccionados);
+    return horarios.some((horario) => {
+      const fechaHorario = new Date(horario.fecha);
+      return fechaCompleta.getTime() === fechaHorario.getTime();
+    });
+  };
+
+  const manejarEnvio = async (e) => {
     e.preventDefault();
-
-    if (!servicio || !fecha || !email || !celular || !tipoIdentificacion || !numerodocumento || !mensaje) {
-      alert('Por favor, completa todos los campos obligatorios.');
+    if (!servicio || !fecha || !email || !nombreComprador || !celular || !tipoIdentificacion || !numerodocumento || !metodoPago) {
+      Swal.fire('Error', 'Por favor, completa todos los campos obligatorios.', 'error');
       return;
     }
 
-    const resumenDatos = `
-      <strong>Servicio:</strong> ${servicio}<br>
-      <strong>Fecha y hora:</strong> ${fecha.toLocaleString()}<br>
-      <strong>Correo electrónico:</strong> ${email}<br>
-      <strong>Número de celular:</strong> ${celular}<br>
-      <strong>Tipo de identificación:</strong> ${tipoIdentificacion}<br>
-      <strong>Número de documento:</strong> ${numerodocumento}<br>
-      <strong>Destinatarios:</strong> ${destinatarios.filter(d => d).join(', ')}<br>
-      <strong>Mensaje:</strong> ${mensaje}
-    `;
-
-    Swal.fire({
-      title: 'Confirmar Reserva',
-      html: resumenDatos,
-      icon: 'info',
-      showCancelButton: true,
-      confirmButtonText: 'Confirmar',
-      cancelButtonText: 'Cancelar',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire('¡Reservado!', 'Tu reserva ha sido confirmada.', 'success');
-      }
+    // Obtener el horario seleccionado
+    const horarioSeleccionado = horarios.find((horario) => {
+      const fechaHorario = new Date(horario.fecha);
+      return fechaHorario.getTime() === fecha.getTime();
     });
+
+    if (!horarioSeleccionado) {
+      Swal.fire('Error', 'El horario seleccionado no está disponible.', 'error');
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:3000/api/horarios/${horarioSeleccionado._id}/reservar`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          usuarioId: numerodocumento, // Aquí usamos el número de documento como ID temporal
+          nombre: nombreComprador,
+          email: email,
+          metodoPago: metodoPago,
+          monto: 120000 // Puedes ajustar esto según el servicio
+        })
+      });
+      
+
+      const result = await response.json();
+      if (response.ok) {
+        Swal.fire('¡Reservado!', 'Tu reserva ha sido confirmada.', 'success');
+      } else {
+        Swal.fire('Error', result.message || 'No se pudo reservar el horario.', 'error');
+      }
+    } catch (error) {
+      console.error("Error al enviar la reserva:", error);
+      Swal.fire('Error', 'Hubo un problema al reservar la misa.', 'error');
+    }
   };
 
   return (
@@ -134,14 +115,14 @@ const FormularioReservaMisa = () => {
             <form onSubmit={manejarEnvio}>
               <div className="form-group">
                 <label className="form-label">Selecciona un servicio:</label>
-                <select className="form-control" value={servicio} onChange={(e) => setServicio(e.target.value)} required>
+                <select
+                  className="form-control"
+                  value={servicio}
+                  onChange={manejarCambioServicio}
+                  required
+                >
                   <option value="" disabled>Selecciona un servicio</option>
                   <option value="Misa rezada">Misa rezada</option>
-                  <option value="Misa comunitaria - Solo domingos">Misa comunitaria - Solo domingos</option>
-                  <option value="Misa cantada">Misa cantada</option>
-                  <option value="Misa rezada con transmisión">Misa rezada con transmisión</option>
-                  <option value="Misa cantada con transmisión">Misa cantada con transmisión</option>
-                  <option value="Misa cantada campal">Misa cantada campal</option>
                 </select>
               </div>
 
@@ -154,6 +135,7 @@ const FormularioReservaMisa = () => {
                     showTimeSelect
                     filterDate={esFechaDisponible}
                     filterTime={filtrarHora}
+                    timeIntervals={60}
                     dateFormat="Pp"
                     placeholderText="Selecciona fecha y hora"
                     className="form-control"
@@ -176,7 +158,7 @@ const FormularioReservaMisa = () => {
               </div>
 
               <div className="form-group">
-                <label className="form-label">Nombre y apellido </label>
+                <label className="form-label">Nombre y apellido:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -215,59 +197,30 @@ const FormularioReservaMisa = () => {
                 </select>
               </div>
 
-              <div className='form-group'>
-                <label className='form-label'>Número del documento</label>
-                <input 
-                  type="text" 
-                  className='form-control'
+              <div className="form-group">
+                <label className="form-label">Número del documento:</label>
+                <input
+                  type="text"
+                  className="form-control"
                   value={numerodocumento}
                   onChange={(e) => setNumerodocumento(e.target.value)}
                   required
-                  placeholder='Número de documento'
+                  placeholder="Número de documento"
                 />
               </div>
 
               <div className="form-group">
-                <label className="form-label">Nombre y apellido a quien va dirigida la misa:</label>
-                {destinatarios.map((destinatario, index) => (
-                  <input
-                    key={index}
-                    type="text"
-                    className="form-control mb-2"
-                    value={destinatario}
-                    onChange={(e) => manejarCambioDestinatario(index, e.target.value)}
-                    placeholder={`Nombre ${index + 1}`}
-                  />
-                ))}
-                {destinatarios.length < 10 && (
-                  <button type="button" className="btn btn-secondary mt-2 btn-center" onClick={agregarDestinatario}>
-                    Agregar nombres
-                  </button>
-                )}
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Nombre o nombres de quien ofrece la misa</label>
-                <textarea
-                  className="form-control textarea-grande"
-                  value={mensaje}
-                  onChange={(e) => setMensaje(e.target.value)}
-                  maxLength={250}
-                  placeholder="Máximo 250 caracteres"
+                <label className="form-label">Método de pago:</label>
+                <select
+                  className="form-control"
+                  value={metodoPago}
+                  onChange={(e) => setMetodoPago(e.target.value)}
                   required
-                ></textarea>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Mensaje o intención</label>
-                <textarea
-                  className="form-control textarea-grande"
-                  value={mensaje}
-                  onChange={(e) => setMensaje(e.target.value)}
-                  maxLength={250}
-                  placeholder="Máximo 250 caracteres"
-                  required
-                ></textarea>
+                >
+                  <option value="" disabled>Selecciona un método de pago</option>
+                  <option value="Tarjeta">Tarjeta</option>
+                  <option value="Efectivo">Efectivo</option>
+                </select>
               </div>
 
               <button type="submit" className="btn btn-primary btn-block mt-3 btn-center">Enviar</button>
@@ -280,3 +233,4 @@ const FormularioReservaMisa = () => {
 };
 
 export default FormularioReservaMisa;
+
